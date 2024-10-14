@@ -1,0 +1,39 @@
+<div
+  class="flex align-content-center justify-content-center"
+  *ngIf="snipper; else tab"
+>
+  <p-progressSpinner
+    class="h-30rem max-h-full flex align-items-center justify-content-center"
+    styleClass="w-4rem h-4rem"
+    strokeWidth="8"
+    fill="var(--surface-ground)"
+    animationDuration=".5s"
+  />
+</div>
+<ng-template #tab>
+  <div class="flex flex-wrap">
+    <div class="col-12 md:col-6">
+        <h1>{{heroe.superhero}} <small>{{heroe.alter_ego}}</small></h1>
+        <p-divider />
+        <img [src]="heroe.id | image" alt="" >
+    </div>
+    <div class="col-12 md:col-6">
+        <h1>{{heroe.publisher}}</h1>
+        <p-divider></p-divider>
+        <ul>
+            <li>{{heroe.first_appearance}}</li>
+            <li>{{heroe.characters}}</li>
+            <li>{{heroe.publisher}}</li>
+            <li>{{heroe.alter_ego}}</li>
+        </ul>
+        <br>
+        <button 
+        routerLink="/heroes/listado"
+        pButton 
+        pRipple 
+        label="Regresar" 
+        class="p-button-success">
+        </button>
+    </div>
+  </div>
+</ng-template>

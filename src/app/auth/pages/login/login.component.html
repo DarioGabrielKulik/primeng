@@ -1,0 +1,19 @@
+
+<div class="flex justify-content-center align-items-center min-h-screen">
+    <div class="surface-card p-4 shadow-2 border-round w-full md:w-6 lg:w-4">
+      <h1 class="text-center mb-4">Login</h1>
+      <div class="mb-5">        
+        <p-floatLabel>
+          <input pInputText id="username" [(ngModel)]="value" class="w-full" />
+          <label for="username">Username</label>
+        </p-floatLabel>
+      </div>
+      <div class="mb-4">        
+        <p-floatLabel>
+          <input pInputText id="password" type="password" [(ngModel)]="value" class="w-full" />
+          <label for="password">Password</label>
+        </p-floatLabel>
+      </div>
+      <button pButton label="Ingresar" class="w-full" (click)="ingresar()" ></button>
+    </div>
+  </div>

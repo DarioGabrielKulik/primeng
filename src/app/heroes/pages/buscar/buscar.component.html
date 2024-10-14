@@ -1,0 +1,37 @@
+<div class="flex flex-column">
+    <div>
+        <h1>Buscador de Héroes</h1>
+        <p-divider />
+    </div>
+    <div>
+        <h3>Buscador</h3>
+        <p-autoComplete 
+        [(ngModel)]="termino"
+        [suggestions]="sugerencia"
+        (completeMethod)="buscar($event)"
+        [field]="'superhero'"
+        />
+      
+        
+        <p-button label="Buscar" (onClick)="ver()" class="ml-5"/>
+        
+    </div>
+ @if(mostrar && termino){
+    <div class="card flex justify-content-center align-content-center m-4"  >
+        <p-card [header]="termino.superhero" [subheader]="termino.alter_ego" [style]="{ width: '360px' }">
+            <ng-template pTemplate="header">
+                <img alt="Card" [src]="termino.id | image" />
+            </ng-template>
+            <h3>{{termino.publisher}}</h3>
+            <p>
+                Primera Aparición {{termino.first_appearance}}        </p>
+            <ng-template pTemplate="footer">
+                <div class="flex gap-3 mt-1">
+                    <p-button label="Ver más...." [routerLink]="['/heroes/',termino.id]" severity="success" class="w-full" styleClass="w-full" />
+                    <p-button label="Editar" [routerLink]="['/heroes/editar/',termino.id]" severity="info" class="w-full" styleClass="w-full" />
+                </div>
+            </ng-template>
+        </p-card>
+    </div>
+}
+</div>

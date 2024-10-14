@@ -1,0 +1,56 @@
+<h1>Nuevo Heroe <small>asd</small> </h1>
+
+<div class="grid">
+    <div class="col-6">  
+        <div class="flex  align-items-center justify-content-between">
+            <p-floatLabel class="w-5">
+                <input pInputText id="username" [(ngModel)]="heroes.superhero" class="w-12"/>
+                <label for="username">Super Heroe</label>
+            </p-floatLabel>
+    
+            <p-floatLabel class="w-5">
+                <input pInputText id="username" [(ngModel)]="heroes.alter_ego" class="w-12"/>
+                <label for="username">Alto Ego</label>
+            </p-floatLabel>   
+        </div>
+        <div class=" mt-5">
+            <p-floatLabel >
+                <input pInputText id="username" [(ngModel)]="heroes.first_appearance" class="w-full"/>
+                <label for="username">Primera Aparicion</label>
+            </p-floatLabel>  
+        </div>
+        <div class=" mt-5">
+            <p-floatLabel >
+            <input pInputText id="username" [(ngModel)]="heroes.characters" class="w-full"/>
+            <label for="username">Personajes</label>
+            </p-floatLabel>  
+        </div>
+        <div  class="w-12 mt-5">
+            <p-dropdown 
+            [options]="cities" 
+            [(ngModel)]="selectedCity" 
+            optionLabel="name" 
+            placeholder="Compania" 
+            [style]="{'width': '100%'}"
+            />
+        </div>
+        <div class=" mt-5">
+            <p-floatLabel >
+            <input pInputText id="username" [(ngModel)]="heroes.id" class="w-full"/>
+            <label for="username">Img</label>
+            </p-floatLabel>  
+        </div>
+        <div class="mt-5">
+            <button            
+            (click)="guardar()"
+            pButton 
+            pRipple 
+            label="Guardar" 
+            class="w-full">
+            </button>
+        </div>
+    </div>
+    <div class="col-6">
+        <img [src]="heroes.id| image" alt="">
+    </div>
+</div>
